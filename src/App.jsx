@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import TextComponent from "./components/TextComponent";
+import FormComponent from "./components/FormComponent";
 
 
 
@@ -12,7 +13,7 @@ function App() {
           <TextComponent/>
         </Col>
         <Col md={6}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus earum voluptatum ea accusamus odio placeat magnam numquam quod esse iste expedita, voluptate quae, harum omnis! In explicabo aliquid quibusdam nihil.
+          <FormComponent/>
         </Col>
       </Row>
     </Container>
