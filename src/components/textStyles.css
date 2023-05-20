@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+@media screen and (min-width:769px) {
+    body {
+        padding-top: 10rem;
+    }
+}
+
+.left-background-image {
+    position: absolute;
+    left: 0;
+    top: -10%;
+}
