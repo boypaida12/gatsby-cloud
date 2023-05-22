@@ -19,12 +19,12 @@ function TextComponent() {
           Cloud
         </span>
       </div>
-      <h1 className="fw-bold fs-2 my-4">
-        The best way to <br />
+      <h1 className="fw-bold fs-2 my-4 w-75">
+        The best way to
         <span style={{ color: "#663399" }}>
           {" "}
           build, deploy & scale
-          <br /> Gatsby sites
+          Gatsby sites
         </span>
       </h1>
       <TextBody

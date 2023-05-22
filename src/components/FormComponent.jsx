@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import RightBackground from "../assets/right-blue-arm.svg";
 import {
   Autocomplete,
@@ -14,13 +14,35 @@ import {
 } from "@mui/material";
 
 function FormComponent() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    country: "",
+    radioValue: ""
+  });
+
+  const handleChange =(e) =>{
+    e.preventDefault();
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e)=> {
+    e.preventDefault();
+    console.log(formData);
+  }
+
+
   return (
     <>
       <img src={RightBackground} alt="" className="right-background-image" />
 
       <div className="form-container px-4 pt-4 rounded-4">
         <h1 className="fs-4 fw-bold">Enter your details</h1>
-        <Box component="form" noValidate>
+        <Box component="form" noValidate onSubmit={handleSubmit}>
           <TextField
             label="First name"
             size="small"
@@ -28,6 +50,7 @@ function FormComponent() {
             autoComplete="given-name"
             fullWidth
             required
+            onChange={handleChange}
             sx={{ my: 4 }}
           />
           <TextField
@@ -38,6 +61,7 @@ function FormComponent() {
             size="small"
             fullWidth
             required
+            onChange={handleChange}
             sx={{ mb: 4 }}
           />
           <TextField
@@ -47,6 +71,7 @@ function FormComponent() {
             name="email"
             fullWidth
             required
+            onChange={handleChange}
             sx={{ mb: 4 }}
           />
           <Autocomplete
@@ -77,10 +102,11 @@ function FormComponent() {
                 label="Choose a country"
                 inputProps={{
                   ...params.inputProps,
-                  autoComplete: "country", // disable autocomplete and autofill
                 }}
                 size="small"
+                name="country"
                 required
+                onChange={handleChange}
                 sx={{ mb: 4 }}
               />
             )}
@@ -91,28 +117,33 @@ function FormComponent() {
             </FormLabel>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
-              name="radio-buttons-group"
             >
               <FormControlLabel
                 value="Company Project"
                 control={<Radio />}
                 label="Company Project"
+                name="radioValue"
+                onChange={handleChange}
               />
               <FormControlLabel
                 value="Client Project"
                 control={<Radio />}
                 label="Client Project"
+                name="radioValue"
+                onChange={handleChange}
               />
               <FormControlLabel
                 value="Personal Project"
                 control={<Radio />}
                 label="Personal Project"
+                name="radioValue"
+                onChange={handleChange}
               />
             </RadioGroup>
           </FormControl>
-          <div>
             <Button
               variant="contained"
+              type="submit"
               sx={{
                 mb: 3,
                 textTransform: "none",
@@ -125,7 +156,6 @@ function FormComponent() {
             >
               Complete sign up
             </Button>
-          </div>
         </Box>
       </div>
     </>

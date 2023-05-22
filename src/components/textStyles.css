@@ -1,32 +1,34 @@
 body {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding-block: 1rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-block: 1rem;
 }
 
-@media screen and (min-width:769px) {
-    body {
-        padding-top: 10rem;
-    }
+@media screen and (min-width: 769px) {
+  body {
+    padding-top: 10rem;
+  }
+}
+
+.left-background-image,
+.right-background-image {
+  position: absolute;
+  z-index: -1;
 }
 
 .left-background-image {
-    position: absolute;
-    left: 0;
-    top: -10%;
-    z-index: -1;
+  left: 0;
+  top: -10%;
 }
 
-.right-background-image{
-    position: absolute;
-    right: 0;
-    z-index: -1;
+.right-background-image {
+  right: 0;
 }
 
 .form-container {
-    background-color: white;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.39);
--webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.171);
--moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.39);
+  background-color: rgba(255, 255, 255, 0.71);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.171);
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.171);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.171);
 }
